@@ -1,15 +1,204 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>minha galeria do fort</title>
+    <title>Galeria Fortnite</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        h1 {
+            color: #fff;
+            text-shadow: 0 0 10px #00fff9, 2px 2px 4px rgba(0,0,0,0.5);
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-bottom: 3px solid #00fff9;
+            padding-bottom: 0.5rem;
+        }
+
+        .gallery-container {
+            max-width: 1200px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            padding: 1rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            aspect-ratio: 16/9;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 255, 249, 0.3);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .item-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: white;
+            padding: 1rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .item-overlay {
+            transform: translateY(0);
+        }
+
+        .item-overlay h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+            color: #00fff9;
+        }
+
+        .item-overlay p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* Efeito de borda brilhante */
+        .gallery-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 2px solid transparent;
+            border-radius: 15px;
+            transition: border-color 0.3s ease;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .gallery-item:hover::before {
+            border-color: #00fff9;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .gallery-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-container {
+                grid-template-columns: 1fr;
+            }
+
+            body {
+                padding: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
- fortnite
-   <img src="https://i.ytimg.com/vi/adGdyCdvKz4/maxresdefault.jpg">
+    <h1>🎮 GALERIA FORTNITE 🎮</h1>
 
+    <div class="gallery-container">
+        <!-- Imagem 1 -->
+        <div class="gallery-item">
+            <img src="https://cdn2.unrealengine.com/fortnite-chapter-5-season-1-1920x1080-62ba8eb01a7e.jpg" 
+                 alt="Fortnite Capítulo 5 Temporada 1">
+            <div class="item-overlay">
+                <h3>Capítulo 5 - Temporada 1</h3>
+                <p>Sociedade Subterrânea</p>
+            </div>
+        </div>
 
+        <!-- Imagem 2 -->
+        <div class="gallery-item">
+            <img src="https://cdn2.unrealengine.com/fortnite-chapter-4-season-4-1920x1080-8f1b4d8a9c8d.jpg" 
+                 alt="Fortnite Capítulo 4 Temporada 4">
+            <div class="item-overlay">
+                <h3>Capítulo 4 - Temporada 4</h3>
+                <p>Último Recurso</p>
+            </div>
+        </div>
 
+        <!-- Imagem 3 -->
+        <div class="gallery-item">
+            <img src="https://cdn2.unrealengine.com/fortnite-chapter-4-season-3-1920x1080-8f1b4d8a9c8d.jpg" 
+                 alt="Fortnite Capítulo 4 Temporada 3">
+            <div class="item-overlay">
+                <h3>Capítulo 4 - Temporada 3</h3>
+                <p>Selva</p>
+            </div>
+        </div>
+
+        <!-- Imagem 4 -->
+        <div class="gallery-item">
+            <img src="https://cdn2.unrealengine.com/fortnite-chapter-4-season-2-1920x1080-8f1b4d8a9c8d.jpg" 
+                 alt="Fortnite Capítulo 4 Temporada 2">
+            <div class="item-overlay">
+                <h3>Capítulo 4 - Temporada 2</h3>
+                <p>Mega Cidade</p>
+            </div>
+        </div>
+
+        <!-- Imagem 5 -->
+        <div class="gallery-item">
+            <img src="https://cdn2.unrealengine.com/fortnite-chapter-4-season-1-1920x1080-8f1b4d8a9c8d.jpg" 
+                 alt="Fortnite Capítulo 4 Temporada 1">
+            <div class="item-overlay">
+                <h3>Capítulo 4 - Temporada 1</h3>
+                <p>Caos</p>
+            </div>
+        </div>
+
+        <!-- Imagem 6 -->
+        <div class="gallery-item">
+            <img src="https://cdn2.unrealengine.com/fortnite-chapter-3-season-4-1920x1080-8f1b4d8a9c8d.jpg" 
+                 alt="Fortnite Capítulo 3 Temporada 4">
+            <div class="item-overlay">
+                <h3>Capítulo 3 - Temporada 4</h3>
+                <p>Paraíso</p>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
